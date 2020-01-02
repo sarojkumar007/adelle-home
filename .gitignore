@@ -86,3 +86,6 @@ lint/tmp/
 
 #node_modules
 node_modules/
+.vscode/
+.notes.txt
+.snippets.txt
