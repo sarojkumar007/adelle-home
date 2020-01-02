@@ -1,0 +1,49 @@
+//
+.down-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+.down-btn {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto;
+  fill: #fff;
+  cursor: pointer;
+}
+.vert-move {
+  -webkit-animation: mover .5s infinite alternate;
+  animation: mover .5s infinite alternate;
+}
+.a-ul{
+  display: inline-block;
+  margin: 1.5rem auto;
+  text-align: left;
+  padding-left: 2rem;
+  list-style-type: none;
+  & li{
+    padding-left: 3rem;
+    background-image: url(../images/splotch-solid.svg);
+    background-position: 0 .5rem;
+    background-size: 1.8rem 1.8rem;
+    background-repeat: no-repeat;
+    font-size: 1.9rem;
+  }
+}
+
+.a-cert-view-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+.a-cert-view-box{
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  background-color: var(--color-p-light);
+  transition: .3s;
+  &:hover{
+    box-shadow: 2px .4rem .8rem rgba(0,0,0,.3);
+  }
+}

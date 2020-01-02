@@ -1,0 +1,35 @@
+{
+  "name": "adelle_international",
+  "version": "1.0.1",
+  "description": "Adelle International, A premium export house",
+  "main": "main.js",
+  "scripts": {
+    "watch:main": "node-sass sass/main.scss css/style.css -w",
+    "watch:404": "node-sass sass/404.scss css/404.css -w",
+    "devserver": "live-server --port=9595",
+    "start:main": "npm-run-all --parallel devserver watch:main",
+    "start": "npm-run-all --parallel devserver watch:404",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "compile:404": "node-sass sass/404.scss css/style.comp.css",
+    "prefix:404": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "compress:404": "node-sass css/style.prefix.css css/404.css --output-style compressed",
+    "build:main": "npm-run-all compile:sass prefix:css compress:css",
+    "build:404": "npm-run-all compile:404 prefix:404 compress:404"
+  },
+  "keywords": [
+    "adelle",
+    "adelle international",
+    "adelle export house"
+  ],
+  "author": "Saroj Kumar Sahoo",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.4",
+    "concat": "^1.0.3",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.1.1",
+    "postcss-cli": "^6.1.3"
+  }
+}

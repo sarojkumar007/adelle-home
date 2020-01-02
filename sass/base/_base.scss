@@ -1,0 +1,49 @@
+/*
+Copyrights, Saroj Kumar Sahoo
+*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 10px;
+  scroll-behavior: smooth;
+
+  @include respond(tab-land){
+      font-size: 9px;
+  }
+  @include respond(tab){
+      font-size: 9px;
+  }
+  @include respond(phone){
+      font-size: 8px;
+  }
+}
+body{
+  position: relative;
+  font-family: $font-d;
+  background-color: $color-white;
+  line-height: 1.6;
+}
+::-moz-selection {
+  background-color: var(--color-p-light);
+}
+
+::selection {
+  background-color: var(--color-p-light);
+}
+
+a:after{
+  content: "";
+  display: -webkit-box;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: currentColor;
+    transition: width .3s;
+  }
+a:hover:after{
+  width: 100%;
+}

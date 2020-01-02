@@ -1,0 +1,9 @@
+//
+.a-footer{
+    background-color: $color-black;
+    color: var(--color-std);
+    &-copyright{
+        text-align: center;
+        padding: 2rem;
+    }
+}

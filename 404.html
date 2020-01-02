@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1,ie=edge">
+  <link rel="shortcut icon" href="images/favicon.ico" sizes="32x32">
+  <title>404 Error | Adelle International</title>
+  <meta name="og:title" content="Error 404">
+  <meta name="description" content="404 Error, URL not found">
+  <meta name="og:description" content="404 Error, URL not found">
+  <meta name="og:url" content="//">
+  <meta name="author" content="Adelle International">
+  <meta name="theme-color" content="#9df3c4">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,700|Montserrat:400,600,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/404.css">
+</head>
+<body>
+  <div class="a-navbar" id="a_navbar">
+    <div class="a-navbar-container">
+    <div class="a-navbar-brand" id="a_navbar_brand">
+      <svg class="a-navbar--logo" id="a_navbar_logo">
+        <use xlink:href="images/sprites/brands.svg#pagelines"></use>
+      </svg>
+    </div>
+    <nav class="a-nav">
+      <ul class="a-nav-ul" id="a_nav_ul">
+        <li class="a-nav-ul--list">
+          <a href="javascript:goHome()" class="a-nav-ul--link">Home</a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="a-nav-alt">
+      <input type="checkbox" id="a-nav-input">
+      <div class="a-nav-btn-container">
+        <label for="a-nav-input">
+          <svg class="a-nav-btn" id="a-nav-btn">
+            <use xlink:href="images/sprites/solid.svg#bars"></use>
+          </svg>
+        </label>
+      </div>
+    </nav>
+    </div>
+    <div class="a-nav-alt-nav" id="alt-nav">
+      <ul class="a-nav-alt--ul" id="a-nav-alt--ul">
+        <li class="a-nav-alt--li">
+          <a href="" class="a-nav-alt--link">Home</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+<section class="a-section a-section-404">
+  <div class="error-container">
+    <div class="error">
+      <h2 class="error-code">404 Error</h2>
+      <p class="error-text">Oops! You have entered a invalid URL</p>
+      <a href="javascript:history.back()" class="error-link a-btn">Go Back</a>
+    </div>
+  </div>
+</section>
+<footer class="a-footer">
+  <div class="a-footer-copyright">
+    <p class="a-paragraph a-paragraph-alt">&copy; 2020, Adelle International</p>
+  </div>
+</footer>
+
+<script type="text/javascript" src="js/main.js"></script>
+<script>
+// Height, bg-color, brand padding, ul fz, link padding
+
+function navScroll() {
+  if ( document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    document.getElementById('a_navbar').style.height = '7rem';
+    document.getElementById('a_navbar').style.boxShadow = '0 .5rem 1rem rgba(0,0,0,.2)';
+    document.getElementById('a_navbar').style.backgroundColor = '#fff';
+    document.getElementById('a_navbar_brand').style.padding = '1rem';
+    document.getElementById('a_navbar_logo').style.fill = '#1fab89';
+    document.getElementById('a_nav_ul').style.color = '#62d2a2';
+    document.getElementById('a-nav-btn').style.fill = '#1fab89';
+  } else { // Initial States
+    document.getElementById('a_navbar').style.height = '10rem';
+    document.getElementById('a_navbar').style.backgroundColor = 'transparent';
+    document.getElementById('a_navbar_brand').style.padding = '2rem';
+    document.getElementById('a_navbar_logo').style.fill = '#fff';
+    document.getElementById('a_nav_ul').style.color = '#fff';
+    document.getElementById('a_navbar').style.boxShadow = 'none';
+    document.getElementById('a-nav-btn').style.fill = '#fff';
+  }
+}
+window.onscroll = ()=>{navScroll()};
+</script>
+<script>
+  let alt_nav = document.getElementById('alt-nav');
+  let checkbox = document.getElementById('a-nav-input');
+  let ul = document.getElementById('a-nav-alt--ul');
+  checkbox.addEventListener('change',()=>{
+    if(checkbox.checked){
+      alt_nav.style.display = 'block';
+      setTimeout(()=>{
+        ul.style.height = '100%';
+        document.querySelector('.a-nav-btn use').setAttribute('xlink:href','images/sprites/solid.svg#times');
+      },100);
+    }
+    else{
+      ul.style.height = 0;
+      document.querySelector('.a-nav-btn use').setAttribute('xlink:href','images/sprites/solid.svg#bars');
+      setTimeout(()=>{
+        alt_nav.style.display = 'none';
+      },300);
+    }
+  });
+</script>
+</body>
+</html>

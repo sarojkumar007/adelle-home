@@ -1,0 +1,122 @@
+//
+.a-navbar{
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 10rem;
+    // overflow: hidden;
+    user-select: none;
+    background-color: transparent;
+    color: var(--color-p-dark);
+    box-shadow: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    transition: height .3s, background .3s;
+    &-container{
+      display: flex;
+      align-items: center;
+      height: 100%;
+      flex-basis: 100vw;
+      margin-right: auto;
+    }
+    &-brand{
+        height: 100%;
+        padding: 2rem;
+        transition: padding .3s;
+    }
+    &--logo{ // SVG
+        width: 7rem;
+        height: 100%;
+        fill: $color-white;
+    }
+}
+.a-nav{
+    z-index: 102;
+    height: 100%;
+    flex: 1;
+    flex-direction: row-reverse;
+
+    @include respond(tab){
+        display: none;
+    }
+
+    &-ul{
+        font-family: $font-d;
+        color: $color-white;
+        font-weight: 700;
+        font-size: 1.9rem;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        list-style-type: none;
+        transition: font-size .3s;
+        &--list{margin-right: 1rem}
+        &--link{
+            display: inline-block;
+            color: inherit;
+            text-decoration: none;
+            padding: 1.5rem 2rem;
+            letter-spacing: 1.5px;
+            transition: padding .3s;
+
+        }
+    }
+}
+.a-nav{
+    &-alt{
+        height: 100%;
+        display: none;
+        align-items: center;
+        width: 100%;
+
+        @include respond(tab){
+            display: flex;
+        }
+    }
+    &-btn-container{
+        margin-left: auto;
+    }
+    &-btn{
+        width: 3rem;
+        height: 3rem;
+        fill: #fff;
+        margin-right: 2rem;
+        cursor: pointer;
+        transition: color .3s;
+    }
+}
+#a-nav-input{ display: none; }
+.a-nav-alt{
+    &-nav{
+        display: none;
+        width: 100%;
+        flex: 1;
+        color: inherit;
+        z-index: 102;
+        // overflow: hidden;
+        height: calc(56px*5);
+    }
+    &--ul{
+        display: block;
+        height: 100%;
+        font-size: 1.9rem;
+        font-weight: 700;
+        background-color: #fff;
+        height: 0;
+        overflow: hidden;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+        transition: height .3s;
+    }
+    &--li{}
+    &--link{
+        display: inline-block;
+        color: var(--color-p-dark);
+        text-decoration: none;
+        padding: 1.5rem 2rem;
+        letter-spacing: 1.5px;
+        transition: padding .3s;
+    }
+}
