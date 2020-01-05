@@ -39,7 +39,7 @@
 .a-paragraph{
   font-family: $font-d;
   color: $color-black;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 1.9rem;
   padding: 1rem 8rem;
   letter-spacing: 1px;
@@ -49,4 +49,8 @@
   &-alt{
     color: $color-white;
   }
+}
+em{
+  font-family: 'Josefin Sans';
+  font-weight: 300;
 }
