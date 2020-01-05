@@ -33,10 +33,10 @@
           <a href="#products" class="a-nav-ul--link">Products</a>
         </li>
         <li class="a-nav-ul--list">
-          <a href="#cert" class="a-nav-ul--link">Certification</a>
+          <a href="#about" class="a-nav-ul--link">About</a>
         </li>
         <li class="a-nav-ul--list">
-          <a href="#about" class="a-nav-ul--link">About</a>
+          <a href="#cert" class="a-nav-ul--link">Certification</a>
         </li>
         <li class="a-nav-ul--list">
           <a href="#contact" class="a-nav-ul--link">Contact</a>
@@ -47,9 +47,11 @@
       <input type="checkbox" id="a-nav-input">
       <div class="a-nav-btn-container">
         <label for="a-nav-input">
+          <a class="a-nav-btn2">
           <svg class="a-nav-btn" id="a-nav-btn">
             <use xlink:href="images/sprites/solid.svg#bars"></use>
           </svg>
+        </a>
         </label>
       </div>
     </nav>
@@ -63,10 +65,10 @@
           <a href="#products" class="a-nav-alt--link">Products</a>
         </li>
         <li class="a-nav-alt--li">
-          <a href="#cert" class="a-nav-alt--link">Certification</a>
+          <a href="#about" class="a-nav-alt--link">About</a>
         </li>
         <li class="a-nav-alt--li">
-          <a href="#about" class="a-nav-alt--link">About</a>
+          <a href="#cert" class="a-nav-alt--link">Certification</a>
         </li>
         <li class="a-nav-alt--li">
           <a href="#contact" class="a-nav-alt--link">Contact</a>
@@ -135,7 +137,7 @@
     <p class="a-paragraph">We are a team of Young, Passion, Enthusiastic,and Experienced individuals who know Team Dynamics, Client Management, Market Insights and Sourcing Knowledge.</p>
     <p class="a-paragraph">Within a sort span of time we have been able to earn our client's trust and confidence by consistently providing them products that stands for peerless quality and services with a passion to deliver.</p>
   </section>
-  <section class="a-section a-section-about parallax" data-parallax="scroll" data-image-src="images/66.webp">
+  <section id="about" class="a-section a-section-about parallax" data-parallax="scroll" data-image-src="images/66.webp">
     <h2 class="a-heading a-heading--2-alt">Who We are</h2>
     <p class="a-paragraph a-paragraph-alt">ADELLE INTERNATIONAL is a Govt. of India recognised leading premium export house engaged in importing and exporting of multiple agricultural commodities. At ADELLE, we percieve our client's taste and we strive to provide high purity and high quality products to keep up with Market Trends. We are consistently maintaining the competitive price. Products offered are various Vegetables, Fruits, Agrochemicals and many more.</p>
   </section>
@@ -158,7 +160,7 @@
     <p class="a-paragraph a-paragraph-alt">ADELLE INTERNATIONAL's vision is to become a leading Global Premium Exports Company by providing cost effective, high quiality and innovative solution in various products and services.</p>
     <p class="a-paragraph a-paragraph-alt">WE ARE: <strong>S</strong>PECIFIC, <strong>M</strong>EASURABLE, <strong>A</strong>CHIEVABLE, <strong>R</strong>ELEVANT, <strong>T</strong>IME BOUND !</p>
   </section>
-  <section class="a-section a-section-hero-secondary">
+  <section id="cert" class="a-section a-section-hero-secondary">
     <h2 class="a-heading a-heading--2">Certification</h2>
     <p class="a-paragraph a-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia blanditiis, eaque atque nihil voluptatibus ipsam, aspernatur laborum error vitae ratione necessitatibus maiores dolorem quidem minima illum incidunt culpa, vero eum!</p>
     <div class="a-cert-view-container">
@@ -167,7 +169,7 @@
       <div class="a-cert-view-box"></div>
     </div>
   </section>
-  <section class="a-section a-section-contact">
+  <section id="contact" class="a-section a-section-contact">
     <h2 class="a-heading a-heading--2-alt">Contact</h2>
     <div class="a-contact-container">
       <div class="a-contact-brand">
@@ -185,7 +187,7 @@
           <a href="mailto:bhansalico09@gmail.com" class="a-contact-link">Email: bhansalico09@gmail.com</a>
         </p>
       </div>
-    </di class="a-contact-link"v class="a-contact-link">
+    </div>
   </section>
 </main>
 <footer class="a-footer">
@@ -277,7 +279,25 @@ window.onscroll = ()=>{navScroll()};
         },300);
       }
     });
-
+    let alt_nav_link = document.getElementsByClassName('a-nav-alt--link');
+    for(let item of alt_nav_link){
+      item.addEventListener('click',(e)=>{
+        // e.preventDefault();
+        checkbox.checked = false;
+        ul.style.height = 0;
+        document.querySelector('.a-nav-btn use').setAttribute('xlink:href','images/sprites/solid.svg#bars');
+        setTimeout(()=>{
+          alt_nav.style.display = 'none';
+        },300);
+      })
+    }
+    (function() {
+      if (document.location.hash) {
+        setTimeout(function() {
+          window.scrollTo(window.scrollX, window.scrollY - 63);
+        }, 100);
+      }
+    })();
   </script>
 </body>
 </html> 
