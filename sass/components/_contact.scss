@@ -2,23 +2,44 @@
 .a-contact{
   &-container{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    & div{
+      padding: 1rem;
+      text-align: left;
+      @include respond(tab){
+        display: block;
+        flex: 0 0 100%;
+      }
+    }
     @include respond(tab){
-        flex-wrap: wrap;
+      justify-content: center;
+      flex-wrap: wrap;
     }
   }
-  &-brand,&-address,&-social{
-    // min-width: 28rem;
+  &-brand{
+    flex: 0 0 45rem;
+  }
+  // &-address{
+  //   flex: 1;
+  // }
+  &-social{
+    flex: 0 0 25rem;
   }
   &-text{
       font-family: $font-d;
       color: $color-white;
-      font-weight: 400;
-      font-size: 1.9rem;
-      padding: 1rem 5rem;
+      font-weight: 300;
+      font-size: 1.6rem;
+      padding: 1rem 0;
       letter-spacing: 1px;
       @include respond(tab){
         padding: .5rem;
       }
+    }
+    &-link{
+      display: inline-block;
+      text-decoration: none;
+      color: $color-white;
+      line-height: 1.2;
     }
 }
