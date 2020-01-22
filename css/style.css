@@ -312,7 +312,7 @@ em {
   flex: 1;
   color: inherit;
   z-index: 102;
-  height: calc(56px*5); }
+  height: calc(6.3rem*5); }
 
 .a-nav-alt--ul {
   display: block;
